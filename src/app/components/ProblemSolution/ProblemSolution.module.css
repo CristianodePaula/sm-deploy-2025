@@ -1,12 +1,11 @@
 /* ProblemSolution.module.css */
 .container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     background: white;
-    padding: 80px;
-    height: 100vh;
-    flex-wrap: wrap;
+    gap: 20vh;
+    height: 90vh;
   }
   
   .block {
@@ -15,12 +14,12 @@
   }
   
   .title {
-    font-size: 32px;
+    font-size: 1.8rem;
     margin-bottom: 20px;
   }
   
   .text {
-    font-size: 20px;
+    font-size: 1.2rem;
     margin-bottom: 30px;
   }
   

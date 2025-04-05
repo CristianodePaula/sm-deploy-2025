@@ -2,7 +2,6 @@
 
 import React, { JSX } from 'react';
 import styles from './Contact.module.css';
-
 import { useScroll } from '../../resources/useScroll';
 import { contactAnimation } from '../../resources/animations';
 import { motion } from 'framer-motion';

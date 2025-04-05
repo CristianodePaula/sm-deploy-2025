@@ -10,8 +10,6 @@ import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 import ProblemSolution from './components/ProblemSolution/ProblemSolution'
 import AISolution from './components/AISolution/AISolution'
-// import FutureVision from './components/FutureVision/FutureVision'
-// import Section from './components/Section/Section'
 
 export default function App() {
 
@@ -30,8 +28,6 @@ export default function App() {
         <Slider />
         <Contact />
         <Footer />
-        {/* <FutureVision /> */}
-        {/* <Section /> */}
       </motion.div>
     )
 } 

@@ -2,14 +2,14 @@ import type { Variants } from 'framer-motion';
 
 export const navbarAnimation: Variants = {
   hidden: {
-    y: 20,
+    y: -50,
     opacity: 0
   },
   show: {
     y: 0, 
     opacity: 1,
     transition: {
-      type: 'spring',
+      // type: 'spring',
       stiffness: 2000,
       duration: 2,
       delay: 0.2
@@ -21,7 +21,7 @@ export const navbarAnimation: Variants = {
 
 export const headerAnimation: Variants = {
   hidden: {
-    y: '-30vh',
+    y: '-10vh',
     opacity: 0,
     scale: 0
   },
@@ -31,7 +31,7 @@ export const headerAnimation: Variants = {
     scale: 1,
     transition: {
       type: 'tween',
-      duration: 3,
+      duration: 1.5,
       delay: 0.5
     }
   }
@@ -43,14 +43,15 @@ export const headerTAnimation: Variants = {
     scale: 0
   },
   show: {
-    opacity: 0.7,
+    opacity: 0.8,
     scale: 1,
     transition: {
-      duration: 3,
-      delay: 1.5
+      duration: 1.5,
+      delay: 0.5
     }
   }
 };
+
 
 export const aboutTAnimation: Variants = {
   hidden: {
@@ -149,46 +150,31 @@ export const cardsIAnimation: Variants = {
 
 export const contactAnimation: Variants = {
   hidden: {
-    x: 100,
+    y: 30,        // sutil subida
     opacity: 0
   },
   show: {
-    x: 0,
+    y: 0,
     opacity: 1,
     transition: {
-      duration: 3,
-      delay: 0.5,
-      type: 'spring',
-      stiffness: 1000
+      duration: 0.6,
+      ease: 'easeOut',
+      delay: 0.2
     }
   }
 };
 
-export const footerTAnimation: Variants = {
-  hidden: {
-    y: -20,
-    opacity: 0
-  },
-  show: {
-    y: 1,
-    opacity: 1,
-    transition: {
-      duration: 1,
-      delay: 0.5
-    }
-  }
-};
 
 export const footerBAnimation: Variants = {
   hidden: {
-    y: 20,
+    y: 0,
     opacity: 0
   },
   show: {
     y: 1,
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 2,
       delay: 0.5
     }
   }

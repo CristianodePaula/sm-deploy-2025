@@ -1,5 +1,6 @@
 .container {
   background: transparent;
+  background: black;
   height: 80px;
   display: flex;
   align-items: center;
@@ -11,9 +12,9 @@
   transition: background 0.3s ease;
 }
 
-.containerScrolled {
+/* .containerScrolled {
   background: black;
-}
+} */
 
 .logo {
   width: 50px;
@@ -42,7 +43,7 @@
 .menuLink {
   margin: 20px;
   color: white;
-  font-size: 15px;
+  font-size: 1rem;
   cursor: pointer;
   transition: color 0.3s ease;
 }

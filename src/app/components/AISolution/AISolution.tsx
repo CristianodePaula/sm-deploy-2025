@@ -16,8 +16,9 @@ export default function AISolution({ id = 'technologies' }: AboutProps): JSX.Ele
   return (
     <div id={id} className={styles.container} ref={element}>
       <div className={styles.left}>
-      <h1 className={styles.title}>Inovação Tecnológica e I.A</h1>
+
       <motion.div className={styles.content} variants={aboutTAnimation} animate={controls}>
+      <h1 className={styles.title}>Inovação Tecnológica e I.A</h1>
         <p className={styles.text}>
         Nossas aplicações foram desenvolvidas com as mais avançadas 
         tecnologias para garantir performance, segurança e escalabilidade.

@@ -44,7 +44,7 @@ export default function Adverts({ id = 'ecosystem' }: AboutProps): JSX.Element {
 
   return (
     <div className={styles.container} id={id} ref={element}>
-    <h1 className={styles.sectionTitle}>Nossas aplicações</h1>
+    <h1 className={styles.sectionTitle}>Aplicações da Social Market</h1>
     <div>
     <motion.div
         className={styles.gallery}

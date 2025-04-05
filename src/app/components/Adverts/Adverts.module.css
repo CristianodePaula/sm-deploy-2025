@@ -12,13 +12,16 @@
   
   .gallery {
     display: flex;
-    margin: 120px;
+    margin: 100px;
     width: 100vw;
     justify-content: space-around;
   }
   
   .card {
-    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: white;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
@@ -28,6 +31,7 @@
   }
   
   .imageWrapper {
+    
     width: 100%;
     height: 180px;
     position: relative;
@@ -41,14 +45,17 @@
   }
   
   .info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     padding: 16px;
     text-align: center;
   }
   
   .sectionTitle {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 600;
-    margin-top: 60px;
+    margin-top: 20px;
     margin-bottom: 8px;
   }
   

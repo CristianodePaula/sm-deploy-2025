@@ -53,18 +53,19 @@
   
   .title {
     position: absolute;
-    top: 10px;
+    top: 80px;
     left: 100px;
-    font-size: 45px;
+    font-size: 2.6rem;
     color: white;
     text-shadow: 10px 10px 10px black;
   }
   
   .paragraph {
     position: absolute;
-    bottom: 60px;
+    bottom: 80px;
     left: 100px;
-    font-size: 35px;
+    font-size: 2rem;
+    width: 80%;
     color: white;
     font-family: 'Lato', sans-serif;
     text-shadow: 10px 10px 10px black;
