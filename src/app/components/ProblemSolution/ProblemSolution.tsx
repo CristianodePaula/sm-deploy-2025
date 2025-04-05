@@ -15,7 +15,7 @@ export default function ProblemSolution({ id = 'proposal' }:AboutProps): JSX.Ele
   const [element, controls] = useScroll();
 
   return (
-    <div id="proposal" className={styles.container} ref={element}>
+    <div id={id} className={styles.container} ref={element}>
       <motion.div className={styles.block} variants={aboutTAnimation} animate={controls}>
         <h2 className={styles.title}>O Problema</h2>
         <p className={styles.text}>

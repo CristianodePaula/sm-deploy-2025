@@ -12,28 +12,27 @@ export default function Footer(): JSX.Element {
 
   return (
     <div className={styles.container} ref={element}>
-      
       <div className={styles.desc}>
       <motion.div className={styles.box} variants={footerBAnimation} animate={controls}>
         <h2 className={styles.title}>Contate-nos</h2>
-        <a href="/" className={styles.link}>Contato</a>
-        <a href="/" className={styles.link}>Suporte</a>
-        <a href="/" className={styles.link}>Qualificações</a>
-        <a href="/" className={styles.link}>Premiações</a>
+        <a className={styles.link}>Contato</a>
+        <a className={styles.link}>Suporte</a>
+        <a className={styles.link}>Qualificações</a>
+        <a className={styles.link}>Premiações</a>
       </motion.div>
       <motion.div className={styles.box} variants={footerTAnimation} animate={controls}>
         <h2 className={styles.title}>Parcerias</h2>
-        <a href="/" className={styles.link}>RedCar</a>
-        <a href="/" className={styles.link}>SuperVeículos</a>
-        <a href="/" className={styles.link}>SegurosVida</a>
-        <a href="/" className={styles.link}>MegaRoda</a>
+        <a className={styles.link}>RedCar</a>
+        <a className={styles.link}>SuperVeículos</a>
+        <a className={styles.link}>SegurosVida</a>
+        <a className={styles.link}>MegaRoda</a>
       </motion.div>
       <motion.div className={styles.box} variants={footerBAnimation} animate={controls}>
         <h2 className={styles.title}>Redes Sociais</h2>
-        <a href="#" className={styles.icon}><FaFacebook /></a>
-        <a href="#" className={styles.icon}><FaInstagram /></a>
-        <a href="#" className={styles.icon}><FaTwitter /></a>
-        <a href="#" className={styles.icon}><FaYoutube /></a>
+        <a className={styles.icon}><FaFacebook /></a>
+        <a className={styles.icon}><FaInstagram /></a>
+        <a className={styles.icon}><FaTwitter /></a>
+        <a className={styles.icon}><FaYoutube /></a>
       </motion.div>
       </div>
       <div className={styles.copryng}>

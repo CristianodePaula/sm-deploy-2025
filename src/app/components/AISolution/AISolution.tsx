@@ -14,7 +14,7 @@ export default function AISolution({ id = 'technologies' }: AboutProps): JSX.Ele
   const [element, controls] = useScroll();
 
   return (
-    <div id="technologies" className={styles.container} ref={element}>
+    <div id={id} className={styles.container} ref={element}>
       <div className={styles.left}>
       <h1 className={styles.title}>Inovação Tecnológica e I.A</h1>
       <motion.div className={styles.content} variants={aboutTAnimation} animate={controls}>

@@ -7,7 +7,6 @@ import { useScroll } from '../../resources/useScroll';
 import {
   cardsGAnimation,
   cardsCAnimation,
-  cardsIAnimation
 } from '../../resources/animations';
 import { motion } from 'framer-motion';
 import { AboutProps } from '../About/About';

@@ -11,11 +11,15 @@ import logo from '../../assets/smlogo.png';
 import { Link as ScrollLink } from 'react-scroll';
 
 interface NavbarProps {
-  open: boolean;
+  alternate: () => void;
+  open: boolean
+}
+
+interface NavbarProps {
   alternate: () => void;
 }
 
-export default function Navbar({ open, alternate }: NavbarProps): JSX.Element {
+export default function Navbar({ alternate }: NavbarProps): JSX.Element {
   const [scrollNav, setScrollNav] = useState(false);
 
   const changeNav = () => {
@@ -69,7 +73,9 @@ export default function Navbar({ open, alternate }: NavbarProps): JSX.Element {
           </li>
         ))}
       </ul>
-      <a className={styles.button} onClick={alternate}>
+      <a className={styles.button} 
+       onClick={alternate}
+      >
         <FaBars />
       </a>
     </motion.div>

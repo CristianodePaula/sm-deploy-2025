@@ -1,7 +1,7 @@
 // Visão de Futuro e Impacto
 'use client';
 
-import React from 'react';
+import React, { JSX } from 'react';
 import styles from './FutureVision.module.css';
 import { motion } from 'framer-motion';
 import { useScroll } from '../../resources/useScroll';

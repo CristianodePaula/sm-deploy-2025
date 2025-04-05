@@ -13,7 +13,7 @@ export default function Section({ id = 'section' }: AboutProps): JSX.Element {
   const [element, controls] = useScroll();
 
   return (
-    <div id="section"  className={styles.container} ref={element}>
+    <div id={id}  className={styles.container} ref={element}>
       <motion.div
         className={styles.text}
         variants={aboutTAnimation}
