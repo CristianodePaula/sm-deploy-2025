@@ -1,0 +1,44 @@
+/* ProblemSolution.module.css */
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: white;
+    padding: 80px;
+    height: 100vh;
+    flex-wrap: wrap;
+  }
+  
+  .block {
+    width: 450px;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .text {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .block {
+      width: 90%;
+      margin-bottom: 40px;
+    }
+  }

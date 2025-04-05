@@ -1,0 +1,22 @@
+.sectionWhite {
+  background: linear-gradient(135deg, #e2e2f2, #cce0f5);
+    height: 100vh;
+    text-align: center;
+    padding-top: 10px;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 20px;
+    color: #333;
+  }
+  
+  .sectionText {
+    font-size: 1.125rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #555;
+    line-height: 1.6;
+  }
+  

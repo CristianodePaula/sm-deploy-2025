@@ -1,0 +1,39 @@
+.container {
+    height: 100vh;
+    background: #111;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    text-align: center;
+  }
+  
+  .box {
+    max-width: 900px;
+  }
+  
+  .title {
+    font-size: 38px;
+    margin-bottom: 25px;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .text {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #ccc;
+  }
+  
+  @media (max-width: 768px) {
+    .title {
+      font-size: 28px;
+    }
+  
+    .text {
+      font-size: 18px;
+    }
+  }
+  
