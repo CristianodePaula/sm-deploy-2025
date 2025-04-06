@@ -1,16 +1,19 @@
 'use client'
 import React, { useState } from 'react'
-import Navbar from './components/NavBar/Navbar'
+
 import { motion } from "framer-motion"
-import Hero from './components/Heeader/Hero'
-import AboutSection from './components/About/About'
-import Slider from './components/Slider/Slider'
-import Adverts from './components/Adverts/Adverts'
-import Contact from './components/Contact/Contact'
-import Footer from './components/Footer/Footer'
-import ProblemSolution from './components/ProblemSolution/ProblemSolution'
-import AISolution from './components/AISolution/AISolution'
-import Sidebar from './components/Sidebar/Sidebar'
+import TopNavbar from '@/components/TopNavbar'
+import Sidebar from '@/components/HamburgerMenu'
+import HeroSection from '@/sections/HeroSection'
+import ProblemSoluctionSection from '@/sections/ProblemSoluctionSection'
+import ContactSection from '@/sections/ContactSection'
+import Footer from '@/components/Footer/Footer'
+import Slider from '@/sections/ValuesSection'
+import ValuesSection from '@/sections/ValuesSection'
+import ProductDemoSection from '@/sections/ProductDemoSection'
+import TechnologiesSection from '@/sections/TechnologiesSection'
+import EcosystemSection from '@/sections/EcosystemSection'
+
 
 export default function App() {
 
@@ -20,15 +23,15 @@ export default function App() {
     }
     return (
       <motion.div initial="hidden" animate="show">
-        <Navbar alternate={alternate} open={open} /> 
+        <TopNavbar alternate={alternate} open={open} /> 
         <Sidebar open={open} alternate={alternate} />
-        <Hero />
-        <ProblemSolution />
-        <AboutSection />
-        <AISolution />
-        <Adverts />
-        <Slider />
-        <Contact />
+        <HeroSection  />
+        <ProblemSoluctionSection />
+        <ProductDemoSection />
+        <TechnologiesSection />
+        <EcosystemSection />
+        <ValuesSection />
+        <ContactSection />
         <Footer />
       </motion.div>
     )

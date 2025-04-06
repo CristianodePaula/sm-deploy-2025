@@ -1,0 +1,32 @@
+.sectionWhite {
+  background: linear-gradient(135deg, #e2e2f2, #cce0f5);
+    height: 90vh;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 20px;
+  }
+  
+  .sectionText {
+    font-size: 1.2rem;
+    max-width: 1024px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+
+  @media (max-width: 960px) {
+    .sectionTitle {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media (max-width: 960px) {
+    .sectionText {
+      font-size: 1rem;
+    }
+  }

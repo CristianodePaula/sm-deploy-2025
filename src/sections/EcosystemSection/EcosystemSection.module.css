@@ -1,0 +1,144 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #e2e2f2, #cce0f5);
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  overflow: hidden;
+  
+}
+
+.sectionTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #1a1a1a;
+  margin: 20px;
+}
+
+.sectionText {
+  font-size: 1.1rem;
+  max-width: 800px;
+  text-align: center;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.sectionText strong {
+  color: #0059c1;
+  font-weight: 600;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  width: 100vw;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  width: 320px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.info {
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.button {
+  background-color: #0070f3;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0059c1;
+}
+
+.countdown {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* Responsivo para tablets e celulares */
+
+
+@media (max-width: 768px) {
+  .container {
+   padding-bottom: 30px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .sectionText {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .imageWrapper {
+    height: 200px;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}

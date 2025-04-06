@@ -1,0 +1,103 @@
+.container {
+  height: 90vh;
+  background-color: black;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.arrow {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  cursor: pointer;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}
+
+.sliders {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: all 1.5s ease;
+}
+
+.slide {
+  position: relative;
+  min-width: 100vw;
+  height: 100%;
+}
+
+.image {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  background-color: black;
+}
+
+.title {
+  position: absolute;
+  top: 80px;
+  left: 100px;
+  font-size: 2.6rem;
+  color: white;
+  text-shadow: 10px 10px 10px black;
+}
+
+.paragraph {
+  position: absolute;
+  bottom: 80px;
+  left: 100px;
+  font-size: 2rem;
+  width: 80%;
+  color: white;
+  font-family: 'Lato', sans-serif;
+  text-shadow: 10px 10px 10px black;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .container {
+    height: 90vh; /* Manter a altura total para preencher a tela */
+    flex-direction: column;
+  }
+
+  .arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .image {
+    height: 100%;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    left: 1rem;
+    top: 40px;
+    max-width: 90%;
+  }
+
+  .paragraph {
+    font-size: 1rem;
+    left: 1rem;
+    bottom: 40px;
+    width: 90%;
+  }
+}
