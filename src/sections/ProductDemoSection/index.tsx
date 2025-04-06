@@ -4,7 +4,7 @@ import styles from './ProductDemoSection.module.css';
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import { useScroll } from '../../resources/useScroll';
-import { contactAnimation, productDemoTextAnimation, sliderYAnimation, valuesSectionAnimation } from '../../resources/animations';
+import {  productDemoTextAnimation, valuesSectionAnimation } from '../../resources/animations';
 
 export interface AboutProps {
   id?: string;
