@@ -9,14 +9,12 @@
     font-size: 1.8rem;
     font-weight: bold;
     margin: 20px;
-    /* color: #333; */
   }
   
   .sectionText {
     font-size: 1.2rem;
     max-width: 1024px;
     margin: 0 auto;
-    /* color: #555; */
     line-height: 1.6;
   }
   
