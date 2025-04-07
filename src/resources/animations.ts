@@ -18,9 +18,6 @@ export const TopNavbarAnimation: Variants = {
 };
 
 
-
-import { Variants } from 'framer-motion';
-
 export const heroTitleAnimation: Variants = {
   hidden: {
     y: 80,

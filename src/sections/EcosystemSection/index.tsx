@@ -46,9 +46,32 @@ function Countdown({
   return <p className={styles.countdown}>{timeLeft}</p>;
 }
 
-
 export default function EcosystemSection({ id = 'ecosystem' }: AboutProps): JSX.Element {
   const [element, controls] = useScroll();
+
+  // Estados mapeados por índice do array
+  const [availability, setAvailability] = useState<boolean[]>(() =>
+    dataApps.map(() => false)
+  );
+  const [modals, setModals] = useState<boolean[]>(() =>
+    dataApps.map(() => false)
+  );
+
+  const handleAvailabilityChange = (index: number, available: boolean) => {
+    setAvailability((prev) => {
+      const updated = [...prev];
+      updated[index] = available;
+      return updated;
+    });
+  };
+
+  const toggleModal = (index: number, open: boolean) => {
+    setModals((prev) => {
+      const updated = [...prev];
+      updated[index] = open;
+      return updated;
+    });
+  };
 
   return (
     <div className={styles.container} id={id} ref={element}>
@@ -65,53 +88,50 @@ export default function EcosystemSection({ id = 'ecosystem' }: AboutProps): JSX.
           variants={cardsGAnimation}
           animate={controls}
         >
-       {dataApps.map((app, index) => {
-  const [isAvailable, setIsAvailable] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+          {dataApps.map((app, index) => (
+            <motion.div key={index} className={styles.card} variants={cardsCAnimation}>
+              <div className={styles.imageWrapper}>
+                <Image
+                  src={app.imageUrl}
+                  alt={app.title}
+                  className={styles.image}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 360px"
+                  priority
+                />
+              </div>
+              <div className={styles.info}>
+                <h2 className={styles.title}>{app.title}</h2>
+                <button
+                  className={styles.button}
+                  onClick={() => {
+                    if (availability[index]) {
+                      window.open(app.link, '_blank');
+                    } else {
+                      toggleModal(index, true);
+                    }
+                  }}
+                >
+                  Acessar Aplicação
+                </button>
+                <Countdown
+                  target={app.releaseDate}
+                  onAvailabilityChange={(available) =>
+                    handleAvailabilityChange(index, available)
+                  }
+                />
+              </div>
 
-  return (
-    <motion.div key={index} className={styles.card} variants={cardsCAnimation}>
-      <div className={styles.imageWrapper}>
-        <Image
-          src={app.imageUrl}
-          alt={app.title}
-          className={styles.image}
-          fill
-          sizes="(max-width: 768px) 100vw, 360px"
-          priority
-        />
-      </div>
-      <div className={styles.info}>
-        <h2 className={styles.title}>{app.title}</h2>
-        <button
-          className={styles.button}
-          onClick={() => {
-            if (isAvailable) {
-              window.open(app.link, '_blank');
-            } else {
-              setShowModal(true);
-            }
-          }}
-        >
-          Acessar Aplicação
-        </button>
-        <Countdown
-          target={app.releaseDate}
-          onAvailabilityChange={setIsAvailable}
-        />
-      </div>
-
-      {showModal && (
-        <div className={styles.modalOverlay} onClick={() => setShowModal(false)}>
-          <div className={styles.modal} onClick={e => e.stopPropagation()}>
-            <p>Este aplicativo ainda não está disponível. Por favor, aguarde o lançamento oficial!</p>
-            <button onClick={() => setShowModal(false)} className={styles.closeModal}>Fechar</button>
-          </div>
-        </div>
-      )}
-    </motion.div>
-  );
-})}
+              {modals[index] && (
+                <div className={styles.modalOverlay} onClick={() => toggleModal(index, false)}>
+                  <div className={styles.modal} onClick={e => e.stopPropagation()}>
+                    <p>Este aplicativo ainda não está disponível. Por favor, aguarde o lançamento oficial!</p>
+                    <button onClick={() => toggleModal(index, false)} className={styles.closeModal}>Fechar</button>
+                  </div>
+                </div>
+              )}
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </div>
