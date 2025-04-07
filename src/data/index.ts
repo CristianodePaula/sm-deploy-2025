@@ -1,9 +1,10 @@
 import redeSocial from '../assets/rede-social.jpg';
 import painelEmpresa from '../assets/painel-empresa.jpg';
-import appEntregador from '../assets/00.jpg';
+import appEntregador from '../assets/deliverylogin.png';
 import connection from '../assets/conection.jpeg'
 import woman from '../assets/woman.jpeg'
 import bussiness from '../assets/bussiness.jpeg'
+
 export const dataApps = [
   {
     title: 'Rede Social',

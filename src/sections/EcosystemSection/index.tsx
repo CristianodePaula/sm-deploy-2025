@@ -1,5 +1,4 @@
 'use client';
-
 import React, { JSX, useEffect, useState } from 'react';
 import styles from './EcosystemSection.module.css';
 import { dataApps } from '../../data';
@@ -12,7 +11,13 @@ import { motion } from 'framer-motion';
 import { AboutProps } from '../ProductDemoSection';
 import Image from 'next/image';
 
-function Countdown({ target }: { target: string }) {
+function Countdown({
+  target,
+  onAvailabilityChange,
+}: {
+  target: string;
+  onAvailabilityChange: (available: boolean) => void;
+}) {
   const [timeLeft, setTimeLeft] = useState('');
 
   useEffect(() => {
@@ -23,6 +28,7 @@ function Countdown({ target }: { target: string }) {
 
       if (difference <= 0) {
         setTimeLeft('Disponível');
+        onAvailabilityChange(true);
         clearInterval(interval);
       } else {
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
@@ -30,14 +36,16 @@ function Countdown({ target }: { target: string }) {
           (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
         );
         setTimeLeft(`${days} dias e ${hours} horas`);
+        onAvailabilityChange(false);
       }
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [target]);
+  }, [target, onAvailabilityChange]);
 
   return <p className={styles.countdown}>{timeLeft}</p>;
 }
+
 
 export default function EcosystemSection({ id = 'ecosystem' }: AboutProps): JSX.Element {
   const [element, controls] = useScroll();
@@ -57,27 +65,53 @@ export default function EcosystemSection({ id = 'ecosystem' }: AboutProps): JSX.
           variants={cardsGAnimation}
           animate={controls}
         >
-          {dataApps.map((app, index) => (
-            <motion.div key={index} className={styles.card} variants={cardsCAnimation}>
-              <div className={styles.imageWrapper}>
-                <Image
-                  src={app.imageUrl}
-                  alt={app.title}
-                  className={styles.image}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 360px"
-                  priority
-                />
-              </div>
-              <div className={styles.info}>
-                <h2 className={styles.title}>{app.title}</h2>
-                <a href={app.link} target="_blank" rel="noopener noreferrer">
-                  <button className={styles.button}>Acessar Aplicação</button>
-                </a>
-                <Countdown target={app.releaseDate} />
-              </div>
-            </motion.div>
-          ))}
+       {dataApps.map((app, index) => {
+  const [isAvailable, setIsAvailable] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  return (
+    <motion.div key={index} className={styles.card} variants={cardsCAnimation}>
+      <div className={styles.imageWrapper}>
+        <Image
+          src={app.imageUrl}
+          alt={app.title}
+          className={styles.image}
+          fill
+          sizes="(max-width: 768px) 100vw, 360px"
+          priority
+        />
+      </div>
+      <div className={styles.info}>
+        <h2 className={styles.title}>{app.title}</h2>
+        <button
+          className={styles.button}
+          onClick={() => {
+            if (isAvailable) {
+              window.open(app.link, '_blank');
+            } else {
+              setShowModal(true);
+            }
+          }}
+        >
+          Acessar Aplicação
+        </button>
+        <Countdown
+          target={app.releaseDate}
+          onAvailabilityChange={setIsAvailable}
+        />
+      </div>
+
+      {showModal && (
+        <div className={styles.modalOverlay} onClick={() => setShowModal(false)}>
+          <div className={styles.modal} onClick={e => e.stopPropagation()}>
+            <p>Este aplicativo ainda não está disponível. Por favor, aguarde o lançamento oficial!</p>
+            <button onClick={() => setShowModal(false)} className={styles.closeModal}>Fechar</button>
+          </div>
+        </div>
+      )}
+    </motion.div>
+  );
+})}
         </motion.div>
       </div>
     </div>

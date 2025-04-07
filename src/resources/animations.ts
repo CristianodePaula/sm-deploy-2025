@@ -19,38 +19,43 @@ export const TopNavbarAnimation: Variants = {
 
 
 
-export const headerAnimation: Variants = {
+import { Variants } from 'framer-motion';
+
+export const heroTitleAnimation: Variants = {
   hidden: {
-    y: '-10vh',
+    y: 80,
     opacity: 0,
-    scale: 0
+    filter: 'blur(8px)',
   },
   show: {
-    y: 1,
+    y: 0,
     opacity: 1,
-    scale: 1,
+    filter: 'blur(0px)',
     transition: {
-      type: 'tween',
-      duration: 1.5,
-      delay: 0.5
-    }
-  }
+      duration: 1.2,
+      ease: 'easeOut',
+    },
+  },
 };
 
-export const headerTAnimation: Variants = {
+export const heroSubtitleAnimation: Variants = {
   hidden: {
+    y: 50,
     opacity: 0,
-    scale: 0
+    filter: 'blur(6px)',
   },
   show: {
-    opacity: 0.8,
-    scale: 1,
+    y: 0,
+    opacity: 1,
+    filter: 'blur(0px)',
     transition: {
-      duration: 1.5,
-      delay: 0.5
-    }
-  }
+      delay: 0.5,
+      duration: 1.2,
+      ease: 'easeOut',
+    },
+  },
 };
+
 
 
 export const aboutTAnimation: Variants = {
@@ -126,7 +131,7 @@ export const cardsGAnimation: Variants = {
 
 export const cardsCAnimation: Variants = {
   hidden: {
-    y: -50,
+    y: 50,
     opacity: 0
   },
   show: {

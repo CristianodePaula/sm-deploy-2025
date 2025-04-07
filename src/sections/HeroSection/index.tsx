@@ -3,10 +3,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './HeroSection.module.css';
 import { useScroll } from '../../resources/useScroll';
-import { headerAnimation, headerTAnimation } from '../../resources/animations';
+import { heroTitleAnimation, heroSubtitleAnimation } from '../../resources/animations';
 import { AboutProps } from '../ProductDemoSection';
 
-export default function HeroSection({ id = 'home' }:AboutProps) {
+export default function HeroSection({ id = 'home' }: AboutProps) {
   const [element, controls] = useScroll();
 
   return (
@@ -19,17 +19,20 @@ export default function HeroSection({ id = 'home' }:AboutProps) {
         muted
         playsInline
       />
+      <div className={styles.overlay} />
       <div className={styles.text}>
-        <motion.p
+        <motion.h1
           className={styles.paragraph}
-          variants={headerAnimation}
+          variants={heroTitleAnimation}
+          initial="hidden"
           animate={controls}
         >
           A Revolução Social do Mercado
-        </motion.p>
+        </motion.h1>
         <motion.p
           className={styles.subtitle}
-          variants={headerTAnimation}
+          variants={heroSubtitleAnimation}
+          initial="hidden"
           animate={controls}
         >
           Conectamos empresas e consumidores com inteligência, propósito e recompensa.

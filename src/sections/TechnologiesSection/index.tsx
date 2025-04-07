@@ -16,7 +16,7 @@ export default function TechnologiesSection({ id = 'technologies' }: AboutProps)
   return (
     <div id={id} className={styles.container} ref={element}>
       <div className={styles.left}>
-
+        
       <motion.div className={styles.content} variants={aboutTAnimation} animate={controls}>
       <h1 className={styles.title}>Inovação Tecnológica e I.A</h1>
         <p className={styles.text}>
