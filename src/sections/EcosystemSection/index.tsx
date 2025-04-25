@@ -23,9 +23,17 @@ function Countdown({
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date();
-      const targetDate = new Date(target);
+  
+      // Cria a data de lançamento para o dia 25 do próximo mês
+      const targetDate = new Date(
+        now.getFullYear(),
+        now.getMonth() + 1, // próximo mês
+        25,
+        0, 0, 0, 0 // meia-noite
+      );
+  
       const difference = targetDate.getTime() - now.getTime();
-
+  
       if (difference <= 0) {
         setTimeLeft('Disponível');
         onAvailabilityChange(true);
@@ -39,9 +47,10 @@ function Countdown({
         onAvailabilityChange(false);
       }
     }, 1000);
-
+  
     return () => clearInterval(interval);
-  }, [target, onAvailabilityChange]);
+  }, []);
+  
 
   return <p className={styles.countdown}>{timeLeft}</p>;
 }
