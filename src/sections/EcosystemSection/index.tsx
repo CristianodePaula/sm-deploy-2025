@@ -12,10 +12,8 @@ import { AboutProps } from '../ProductDemoSection';
 import Image from 'next/image';
 
 function Countdown({
-  target,
   onAvailabilityChange,
 }: {
-  target: string;
   onAvailabilityChange: (available: boolean) => void;
 }) {
   const [timeLeft, setTimeLeft] = useState('');
@@ -23,17 +21,16 @@ function Countdown({
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date();
-  
-      // Cria a data de lançamento para o dia 25 do próximo mês
+
       const targetDate = new Date(
         now.getFullYear(),
-        now.getMonth() + 1, // próximo mês
+        now.getMonth(),
         25,
-        0, 0, 0, 0 // meia-noite
+        0, 0, 0, 0
       );
-  
+
       const difference = targetDate.getTime() - now.getTime();
-  
+
       if (difference <= 0) {
         setTimeLeft('Disponível');
         onAvailabilityChange(true);
@@ -47,13 +44,13 @@ function Countdown({
         onAvailabilityChange(false);
       }
     }, 1000);
-  
+
     return () => clearInterval(interval);
-  }, []);
-  
+  }, [onAvailabilityChange]);
 
   return <p className={styles.countdown}>{timeLeft}</p>;
 }
+
 
 export default function EcosystemSection({ id = 'ecosystem' }: AboutProps): JSX.Element {
   const [element, controls] = useScroll();
@@ -124,11 +121,10 @@ export default function EcosystemSection({ id = 'ecosystem' }: AboutProps): JSX.
                   Acessar Aplicação
                 </button>
                 <Countdown
-                  target={app.releaseDate}
-                  onAvailabilityChange={(available) =>
-                    handleAvailabilityChange(index, available)
-                  }
-                />
+  onAvailabilityChange={(available) =>
+    handleAvailabilityChange(index, available)}
+/>
+
               </div>
 
               {modals[index] && (
