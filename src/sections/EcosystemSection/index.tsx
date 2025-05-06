@@ -121,9 +121,9 @@ export default function EcosystemSection({ id = 'ecosystem' }: AboutProps): JSX.
                   Acessar Aplicação
                 </button>
                 <Countdown
-  onAvailabilityChange={(available) =>
-    handleAvailabilityChange(index, available)}
-/>
+                  onAvailabilityChange={(available) =>
+                  handleAvailabilityChange(index, available)}
+              />
 
               </div>
 
